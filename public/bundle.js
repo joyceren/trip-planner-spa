@@ -537,7 +537,7 @@ module.exports={"$version":8,"$root":{"version":{"required":true,"type":"enum","
 const mapboxgl = __webpack_require__(0);
 const buildMarker = __webpack_require__(3);
 
-mapboxgl.accessToken = "YOUR API TOKEN HERE";
+mapboxgl.accessToken = "pk.eyJ1IjoicmVqb3ljZSIsImEiOiJjajhicmViNWIwMHp4Mndtczc0c2RsYjhkIn0.vSyKy09QQZzQzJGtAuKRfg";
 
 const map = new mapboxgl.Map({
   container: "map",
