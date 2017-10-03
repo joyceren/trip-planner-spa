@@ -1,14 +1,15 @@
 // This file should contain all the record creation needed to seed the database with its default values.
 // The data can then be loaded with the node seed.js
+'use strict';
 
-var Promise = require("bluebird");
-var db = require("./models").db;
-var Place = require("./models").Place;
-var Hotel = require("./models").Hotel;
-var Restaurant = require("./models").Restaurant;
-var Activity = require("./models").Activity;
+const Promise = require("bluebird");
+const db = require("./models").db;
+const Place = require("./models").Place;
+const Hotel = require("./models").Hotel;
+const Restaurant = require("./models").Restaurant;
+const Activity = require("./models").Activity;
 
-var data = {
+const data = {
   hotel: [
     {
       name: "Andaz Wall Street",
@@ -544,10 +545,10 @@ var data = {
 
 db
   .sync({ force: true })
-  .then(function() {
+  .then(() => {
     console.log("Dropped old data, now inserting data");
-    return Promise.map(Object.keys(data), function(name) {
-      return Promise.map(data[name], function(item) {
+    return Promise.map(Object.keys(data), name => {
+      return Promise.map(data[name], item => {
         return db.model(name).create(item, {
           include: [Place]
         });
