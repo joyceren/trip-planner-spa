@@ -4,10 +4,7 @@
 
 const Promise = require("bluebird");
 const db = require("./models").db;
-const Place = require("./models").Place;
-const Hotel = require("./models").Hotel;
-const Restaurant = require("./models").Restaurant;
-const Activity = require("./models").Activity;
+const { Place, Hotel, Restaurant, Activity } = require("./models");
 
 const data = {
   hotel: [
