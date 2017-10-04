@@ -1,57 +1,57 @@
 const Sequelize = require('sequelize'),
-      { STRING, TEXT, ENUM, ARRAY, FLOAT, INTEGER, DOUBLE } = Sequelize;
+      { STRING, TEXT, ARRAY, INTEGER, DOUBLE } = Sequelize;
 
-const db = new Sequelize('postgres://localhost/5432/tripplanner');
+const db = new Sequelize('postgres://localhost:5432/tripplanner');
 
 const Place = db.define('place', {
   address:{
-    type: TEXT
+    type: TEXT,
   },
   city: {
-    type: STRING
+    type: STRING,
   },
   state: {
-    type: STRING
+    type: STRING,
   },
   phone: {
-    type: STRING
+    type: STRING,
   },
   location: {
-    type: ARRAY(DOUBLE)
-  }
+    type: ARRAY(DOUBLE),
+  },
 });
 
 const Hotel = db.define('hotel', {
   name: {
-    type: STRING
+    type: STRING,
   },
   num_stars: {
-    type: INTEGER
+    type: INTEGER,
   },
   amenities: {
-    type: STRING
+    type: STRING,
   }
 });
 
 const Activity = db.define('activity', {
   name: {
-    type: STRING
+    type: STRING,
   },
   age_range: {
-    type: STRING
+    type: STRING,
   }
 });
 
 const Restaurant = db.define('restaurant', {
   name: {
-    type: STRING
+    type: STRING,
   },
   cuisine: {
-    type: STRING
+    type: STRING,
   },
   price: {
-    type: INTEGER
-  }
+    type: INTEGER,
+  },
 });
 
 Hotel.belongsTo(Place);

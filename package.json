@@ -1,8 +1,8 @@
 {
-  "name": "y",
+  "name": "trip-planner-spa",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "webpack.config.js",
   "dependencies": {
     "bluebird": "^3.5.0",
     "body-parser": "^1.18.2",
@@ -12,21 +12,24 @@
     "nodemon": "^1.12.1",
     "path": "^0.12.7",
     "pg": "^7.3.0",
-    "sequelize": "^4.13.3",
+    "sequelize": "^4.13.5"
+  },
+  "devDependencies": {
     "webpack": "^3.6.0"
   },
-  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "webpack -w & nodemon server/app.js",
+    "start": "npm run start:dev"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/joyceren/trip-planner-spa.git"
+    "url": "git+https://github.com/DatGreekChick/trip-planner-spa.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/joyceren/trip-planner-spa/issues"
+    "url": "https://github.com/DatGreekChick/trip-planner-spa/issues"
   },
-  "homepage": "https://github.com/joyceren/trip-planner-spa#readme"
+  "homepage": "https://github.com/DatGreekChick/trip-planner-spa#readme"
 }
