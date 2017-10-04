@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize'),
-      { STRING, TEXT, ENUM, ARRAY, FLOAT, INTEGER } = Sequelize;
+      { STRING, TEXT, ENUM, ARRAY, FLOAT, INTEGER, DOUBLE } = Sequelize;
 
 const db = new Sequelize('postgres://localhost/5432/tripplanner');
 
@@ -17,7 +17,7 @@ const Place = db.define('place', {
     type: STRING
   },
   location: {
-    type: ARRAY(FLOAT)
+    type: ARRAY(DOUBLE)
   }
 });
 
@@ -26,10 +26,10 @@ const Hotel = db.define('hotel', {
     type: STRING
   },
   num_stars: {
-    type: FLOAT
+    type: INTEGER
   },
   amenities: {
-    type: TEXT
+    type: STRING
   }
 });
 
@@ -47,7 +47,7 @@ const Restaurant = db.define('restaurant', {
     type: STRING
   },
   cuisine: {
-    type: TEXT
+    type: STRING
   },
   price: {
     type: INTEGER
