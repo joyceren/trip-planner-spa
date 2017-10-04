@@ -6,12 +6,16 @@ const express = require('express'),
       path = require('path'),
       db = require('./models').db;
 
+
+//middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded( { extended: false }));
 
 app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, '..', 'public')));
 
+
+//server set up
 const port = 3000;
 app.listen(port, () => {
   console.log('Keeping it 3000!');
@@ -23,6 +27,8 @@ app.listen(port, () => {
     .catch(err => console.error('Trouble in paradise!', err, err.stack));
 });
 
+
+//routes
 app.get('/', (req, res, next) => {
   res.json();
   next();
